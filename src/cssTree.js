@@ -239,6 +239,14 @@ var validateHtmlTag = function(flatTwig, htmlEls){
   return false;
 };
 
+var handleValidation = function(validated, delim, rejects, twig) {
+  delim = !validated;
+  if(validated) {
+    rejects.push(twig);
+  }
+  return validated;
+};
+
 var filterSelector = function(branch, classes, htmlEls, ids, attrSelectors){
   var throwDelim = false;
   var rejectedTwigs = [];
